@@ -6,9 +6,9 @@
 
 The only software needed to run these tools is [Docker][docker]. Please see the [installation instructions for your platform][dockerdocs] to get started.
 
-## Getting the Docker images
+### Getting the Docker images
 
-All of our Docker images are available from the [Docker Hub][dockerhub] and will be automatically downloaded first time you run a tool.
+All of our Docker images are available from the [Docker Hub][dockerhub] and will be automatically downloaded first time they are needed by one of these tools.
 
 ## Acknowledgements
 
