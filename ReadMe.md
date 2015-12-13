@@ -14,6 +14,8 @@ All of our Docker images are available from the [Docker Hub][dockerhub] and will
 
 ### `idi-crop-video`
 
+This tool takes a directory full of participant video streams and crops out the front, back and side quarters into separate files in preparation for object tracking.
+
 Simply provide the directory with the source videos and the directory where you want the cropped videos to be written to as parameters:
 
 ```shell
