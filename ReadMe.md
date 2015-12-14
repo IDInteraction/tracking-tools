@@ -12,6 +12,8 @@ All of our Docker images are available from the [Docker Hub][dockerhub] and will
 
 ## Running the tools
 
+These tools hide the complexities of running Docker images and present a more user friendly interface than `docker run ...`. You may need to run them as `root` if you have not set up your users to be able to run Docker without administrator privileges.
+
 ### `idi-crop-video`
 
 This tool takes a directory full of participant video streams and crops out the front, back and side quarters into separate files in preparation for object tracking.
