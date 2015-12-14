@@ -28,6 +28,34 @@ The `<input-directory>` is mounted read-only to ensure that the original videos 
 
 The output videos are written to a subdirectory within `<output-directory>` for each angle from the original video: front, back and side.
 
+### `idi-init-tracking`
+
+This tool uses the outputs from the previous tool, `idi-crop-video`, and gathers the information needed to initialize object tracking. It needs access to the cropped input videos and a directory to save the tracking setup data to:
+
+```shell
+$ idi-init-tracking <videos-directory> <output-directory>
+```
+
+The `<videos-directory>` is mounted read-only to ensure that the cropped videos are preserved so, even though it is technically possible to supply the same directory for both parameters, it is not recommended.
+
+For each video in the `videos-directory` this tool asks the user for two bits of essential information:
+
+* The start time of the experiment, in milliseconds, *from the start of the video*. In other words, if the experiment contained in this video does not start right at the start of the video, you can input the amount of time to skip before object tracking starts. Simply enter `0` if the experiment does start right at the beginning of the video.
+* The bounding box of the object to be tracked. A window is opened showing the first frame of video from the experiment and a bounding box is defined by clicking with the mouse, first, the top-left corner and, second, the bottom-right corner of the box to used. The bounding box can be refined with the following keys:
+ * `i` - zoom in
+ * `o` - zoom out
+ * `a` - move box left one pixel
+ * `d` - move box right one pixel
+ * `w` - move box up one pixel
+ * `s` - move box down one pixel
+ * `A` - make box wider by one pixel
+ * `D` - make box narrower by one pixel
+ * `W` - make box taller by one pixel
+ * `S` - make box shorter by one pixel
+ * `enter` - finish editing bounding box
+
+The information collected by this tool is saved to files in the `output-directory`. The time to skip at the start of a video can be found in `<video-name>.skip` and the bounding box coordinates can be found in `<video-name>.bbox`.
+
 ## Acknowledgements
 
 The IDInteraction Object Tracking Tools were developed in the IDInteraction project, funded by the Engineering and Physical Sciences Research Council, UK through grant agreement number [EP/M017133/1][gow].
