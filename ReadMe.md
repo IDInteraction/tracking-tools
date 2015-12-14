@@ -18,11 +18,13 @@ To install these tools for just the current user, just run `make`:
 $ make
 ```
 
-To install them for all users on the system, run make as root:
+This will install everything into `$HOME/bin`. To install the tools for all users on the system, run make as root:
 
 ```shell
 $ sudo make
 ```
+
+This will install everything into `/usr/local/bin`.
 
 ## Running the tools
 
