@@ -10,6 +10,20 @@ The only software needed to run these tools is [Docker][docker]. Please see the 
 
 All of our Docker images are available from the [Docker Hub][dockerhub] and will be automatically downloaded first time they are needed by one of these tools.
 
+## Installing the tools
+
+To install these tools for just the current user, just run `make`:
+
+```shell
+$ make
+```
+
+To install them for all users on the system, run make as root:
+
+```shell
+$ sudo make
+```
+
 ## Running the tools
 
 These tools hide the complexities of running Docker images and present a more user friendly interface than `docker run ...`. You may need to run them as `root` if you have not set up your users to be able to run Docker without administrator privileges.
