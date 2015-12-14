@@ -72,6 +72,18 @@ For each video in the `videos-directory` this tool asks the user for two bits of
 
 The information collected by this tool is saved to files in the `output-directory`. The time to skip at the start of a video can be found in `<video-name>.skip` and the bounding box coordinates can be found in `<video-name>.bbox`.
 
+### `idi-track`
+
+This is the core object tracking tool in this collection. It takes *exactly* the same two parameters as `idi-init-tracking`; that is, `videos-directory` points to a directory of cropped input videos and `output-directory` points to a directory with the generated `skip` and `bbox` outputs already present:
+
+```shell
+$ idi-track <videos-directory> <output-directory>
+```
+
+The `<videos-directory>` is mounted read-only to ensure that the cropped videos are preserved so, even though it is technically possible to supply the same directory for both parameters, it is not recommended.
+
+For each input video the `output-directory` will gain a file with object tracking data in it - `<video-name>.csv`.
+
 ## Acknowledgements
 
 The IDInteraction Object Tracking Tools were developed in the IDInteraction project, funded by the Engineering and Physical Sciences Research Council, UK through grant agreement number [EP/M017133/1][gow].
