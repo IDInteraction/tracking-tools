@@ -84,6 +84,18 @@ The `<videos-directory>` is mounted read-only to ensure that the cropped videos 
 
 For each input video the `output-directory` will gain a file with object tracking data in it - `<video-name>.csv`.
 
+### `idi-replay-tracking`
+
+This tool takes all the data generated in the previous steps and combines it into a single video output; the object-tracked bounding box and bounding box center point are drawn into each video. As with the previous two tools, `videos-directory` points to a directory of cropped input videos and `output-directory` points to a directory with the generated `skip`, `bbox` and `csv` outputs already present:
+
+```shell
+$ idi-replay-tracking <videos-directory> <output-directory>
+```
+
+The `<videos-directory>` is mounted read-only to ensure that the cropped videos are preserved so, even though it is technically possible to supply the same directory for both parameters, it is not recommended.
+
+For each input video the `output-directory` will gain a video with object tracking data superimposed into it - `<video-name>_out.avi`.
+
 ## Acknowledgements
 
 The IDInteraction Object Tracking Tools were developed in the IDInteraction project, funded by the Engineering and Physical Sciences Research Council, UK through grant agreement number [EP/M017133/1][gow].
