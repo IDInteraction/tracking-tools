@@ -1,6 +1,6 @@
 #!/bin/bash
 #------------------------------------------------------------------------------
-# Copyright (c) 2015 The University of Manchester, UK.
+# Copyright (c) 2015, 2016 The University of Manchester, UK.
 #
 # Licenced under LGPL version 2.1. See LICENCE for details.
 #
@@ -16,4 +16,4 @@ docker run -it --rm --name=idi-init-tracking \
   --volume $2:/idinteraction/output \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
-  idinteraction/object-tracking init
+  idinteraction/object-tracking:3.0 init
