@@ -15,7 +15,6 @@
 # http://wiki.ros.org/docker/Tutorials/GUI
 containerID=setbb
 xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerID`
-docker start $containerId
 
 docker run -it --rm --name=setbb \
   --volume $1:/idinteraction/videos:ro \
