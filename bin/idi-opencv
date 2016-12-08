@@ -14,5 +14,5 @@
 docker run -it --rm --name=opencv \
   --volume $1:/idinteraction/videos:ro \
   --volume $2:/idinteraction/output \
-  --volume $3:/idinteraction/skip \
+  --volume $3:/idinteraction/skip:ro \
   idinteraction/opencv track
