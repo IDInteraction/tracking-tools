@@ -1,0 +1,18 @@
+#!/bin/bash
+#------------------------------------------------------------------------------
+# Copyright (c) 2015, 2016 The University of Manchester, UK.
+#
+# Licenced under LGPL version 2.1. See LICENCE for details.
+#
+# The IDInteraction Object Tracking Tools were developed in the IDInteraction
+# project, funded by the Engineering and Physical Sciences Research Council,
+# UK through grant agreement number EP/M017133/1.
+#
+# Author: Robert Haines
+#------------------------------------------------------------------------------
+
+docker run -it --rm --name=opencv \
+  --volume $1:/idinteraction/videos:ro \
+  --volume $2:/idinteraction/output \
+  --volume $3:/idinteraction/skip \
+  idinteraction/opencv track
