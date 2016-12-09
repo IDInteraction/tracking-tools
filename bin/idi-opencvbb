@@ -13,7 +13,7 @@
 
 # setup X11 access
 # http://wiki.ros.org/docker/Tutorials/GUI
-containerID=opencvbb
+containerID=idinteraction/opencvbb
 xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerID`
 #docker start $containerId
 
@@ -22,4 +22,4 @@ docker run -it --rm --name=opencvbb \
   --volume $2:/idinteraction/output \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=$DISPLAY \
-  $containerID /bin/bash
+  $containerID 
