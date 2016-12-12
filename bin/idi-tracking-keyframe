@@ -21,4 +21,4 @@ docker run -it --rm --name=object-tracking-keyframe \
   --volume $2:/idinteraction/output \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=$DISPLAY \
---entrypoint=/bin/bash  $containerID 
+  $containerID 
