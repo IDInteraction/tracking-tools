@@ -14,4 +14,4 @@
 docker run -it --rm --name=idi-track \
   --volume $1:/idinteraction/videos:ro \
   --volume $2:/idinteraction/output \
-  idinteraction/object-tracking-no-rotate:3.0 track
+  idinteraction/object-tracking-no-rotate track
